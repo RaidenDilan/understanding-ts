@@ -1,31 +1,19 @@
-const person: {
-  name: string,
-  age: number
-} = {
-// const person = {
+// const person: {
+//   name: string,
+//   age: number,
+//   hobbies: string[]
+// } = {
+const person = {
   name: 'Raiden',
-  age: 27
+  age: 27,
+  hobbies: ['Sports', 'Cooking']
 };
+
+let favoriteActivities: string[];
+favoriteActivities = ['Sports', 'Cooking'];
 
 console.log(person.name);
 
-const product: {
-  id: string,
-  price: number,
-  tags: string[],
-  details: {
-    title: string,
-    description: string,
-  }
-} = {
-// const product = {
-  id: 'abc1',
-  price: 12.99,
-  tags: ['great-offer', 'hot-and-new'],
-  details: {
-    title: 'Red Carpet',
-    description: 'A great carpet - almost brand-new!'
-  }
+for (const hobby of person.hobbies) {
+  console.log(hobby.toUpperCase());
 }
-
-console.log(product);
