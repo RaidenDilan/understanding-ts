@@ -1,40 +1,38 @@
 /*
- * Type Aliases / Custom Types
- * Clearer syntax
+ * Type Aliases / Object Types
  */
 
-type Combinable = number | string; // union type
-type ConversionDescriptor = 'as-number' | 'as-text' // union types combined with litral types
+// type User = { name: string; age: number };
+// const u1: User = { name: 'Max', age: 30 }; // this works!
 
-function combine(
-  input1: Combinable,
-  input2: Combinable,
-  resultConversion: ConversionDescriptor
-) {
-  let result;
+// function greet(user: { name: string; age: number }) {
+//   console.log('Hi, I am ' + user.name);
+// }
+ 
+// function isOlder(user: { name: string; age: number }, checkAge: number) {
+//   return checkAge > user.age;
+// }
 
-  // SOLUTION 1: doing conversion before combining values
-  if (typeof input1 === 'number' && typeof input2 === 'number' || resultConversion === 'as-number') {
-    result = +input1 + +input2;
-  }
-  else result = input1.toString() + input2.toString();
+// We can avoid unnecessary repetition and manage types centrally.
+// The above converted to the code bellow
 
-  return result;
-
-  // if (typeof input1 === 'number' && typeof input2 === 'number' ) result = input1 + input2;
-  // else result = input1.toString() + input2.toString();
-  
-  // // SOLUTION 2: forcing conversion
-  // if (resultConversion === 'as-number') return +result; // or parseFloat(result) but +result is shorter.
-  // else return result.toString();
+type User = {
+  name: string;
+  age: number
+};
+ 
+function greet(user: User) {
+  console.log('Hi, I am ' + user.name);
+}
+ 
+function isOlder(user: User, checkAge: number) {
+  return checkAge > user.age;
 }
 
+const user = { name: 'Raiden', age: 27 };
 
-const combinedAges = combine(30, 26, 'as-number');
-console.log(combinedAges);
+const greeting = greet(user)
+console.log(greeting);
 
-const combinedStringAges = combine('30', '26', 'as-number');
-console.log(combinedStringAges);
-
-const combinedNames = combine('Raiden', 'Dilan', 'as-text');
-console.log(combinedNames);
+const checkAge = isOlder(user, user.age)
+console.log(checkAge);
