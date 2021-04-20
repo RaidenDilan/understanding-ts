@@ -1,15 +1,13 @@
 /*
- * Type Aliases / Custom Types
- * Clearer syntax
+ * LITERAL TYPES
+ * on runtime check we tell TS that we only want to allow our string values and nothing else.
+ * 'as-number' | 'as-text'
  */
 
-type Combinable = number | string; // union type
-type ConversionDescriptor = 'as-number' | 'as-text' // union types combined with litral types
-
 function combine(
-  input1: Combinable,
-  input2: Combinable,
-  resultConversion: ConversionDescriptor
+  input1: number | string,
+  input2: number | string,
+  resultConversion: 'as-number' | 'as-text' // union types combined with litral types
 ) {
   let result;
 
