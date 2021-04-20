@@ -1,0 +1,26 @@
+const person: {
+  name: string,
+  age: number,
+  hobbies: string[]
+  role: [number, string], // marking a tupel, fixed-length array
+} = {
+// const person = {
+  name: 'Raiden',
+  age: 27,
+  hobbies: ['Sports', 'Cooking'],
+  role: [2, 'author'] // tupel 
+};
+
+// person.role.push('admin'); // TS doesn't catch this error when using tupels becuase in TS the push method is an exception.
+// person.role[1] = 10;
+
+person.role = [0, 'admin']; // this is ALLOWED, hence no TS errors in our IDE.
+
+let favoriteActivities: string[];
+favoriteActivities = ['Sports', 'Cooking'];
+
+console.log(person.name);
+
+for (const hobby of person.hobbies) {
+  console.log(hobby.toUpperCase());
+}
