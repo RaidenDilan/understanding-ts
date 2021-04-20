@@ -1,18 +1,24 @@
 {
   "name": "understanding-ts",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "lite-server"
   },
   "keywords": [
     "typescript",
     "course"
   ],
-  "author": "Raiden Dilan <raiden18@me.com> (https://www.raidendilan.co.uk/)",
-  "license": "ISC",
+  "author": "RaidenDilan <raiden18@me.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RaidenDilan/understanding-ts.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RaidenDilan/understanding-ts/issues"
+  },
+  "homepage": "https://github.com/RaidenDilan/understanding-ts#readme",
   "devDependencies": {
     "lite-server": "^2.6.1"
   }
